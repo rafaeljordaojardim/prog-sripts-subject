@@ -29,6 +29,70 @@
             </nav>
         </header>
 
+        <section id="corpofull">
+            <article id="noticia-principal">
+                <header id="cabecalho-artigo">
+                    <hgroup>
+                        <h1>Saiba tudo sobre o Carros Autônomos</h1>
+                        <h2>by FATEC MOGI MIRIM</h2>
+                        <h3>Atualizado em 24/08/2020</h3>
+                    </hgroup>
+                </header>
+                <form method="post" id="contatos" action="cadastro.php">
+                    <fieldset id="usuario">
+                        <legend>Identificação do Usuário</legend>
+                        <p><label for="nome">Nome:</label>
+                            <input type="text" name="txtNome" id="nome" size="50" maxlength="50"
+                                placeholder="Nome Completo"></p>
+                        <p><label>Senha:</label>
+                            <input type="password" name="txtSenha" id="senha" size="8" maxlength="8"
+                                placeholder="8 Dígitos"></p>
+                        <p><label>E-mail:</label>
+                            <input type="email" name="txtEmail" id="email" size="50" maxlength="50"
+                                placeholder="Digite seu e-mail"></p>
+                        <fieldset id="sexo">
+                            <legend>Sexo:</legend>
+                            <input type="radio" name="txtSexo" id="masc" />
+                            <label for="masc">Masculino
+                                <input type="radio" name="txtSexo" id="fem" />
+                                <label for="fem">Feminino
+                        </fieldset>
+
+                        <fieldset id="endereco">
+                            <legend>Endereço do Usuário</legend>
+                            <p><label>Logradouro:</label>
+                                <input type="text" name="txtRua" id="rua" size="50" maxlength="50"
+                                    placeholder="Rua,Av,..."></p>
+                            <p>Número:<input type="number" name="txtNum" id="num" 
+                                min="0" maxlength="999"
+                                    placeholder="Número da Casa"></p>
+                            <p><label>Estado:</label>
+                                <select name="test" id="cest">
+                                    <optgroup label="Região Sudeste">
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option selected value="SP">São Paulo</option>
+                                        <option value="MG">Minas Gerais</option>
+                                    </optgroup>
+                                    <optgroup label="Região Sul">
+                                        <option value="PR">Paraná</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                    </optgroup>
+                                </select>
+                            <p><label>Cidade:</label>
+                                <input type="text" name="txtCid" id="cid" placeholder="Sua Cidade">
+                            </p>
+                            <p><label>Data de Nascimento:</label>
+                                <input type="date" name="txtNasc" id="nasc" /></p>
+                            <p>
+                                <input type="submit" value="ENVIAR">
+                                <input type="reset" value="LIMPAR">
+                            </p>
+                        </fieldset>
+                </form>
+            </article>
+        </section>
+
         <footer id="rodape"><br /><br /><br /><br />
             <p>Copyright 2020 - by FATEC MOGI MIRIM<br />
                 <a href="https://www.facebook.com/fatecmm/" target="blank">Facebook</a>
