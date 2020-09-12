@@ -1,0 +1,1 @@
+alert("Olá Mundo do exemplo 2");
