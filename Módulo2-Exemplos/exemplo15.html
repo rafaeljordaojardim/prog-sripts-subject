@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - Exemplo 15</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Básico - Parte I</h1>
+    <h2>Arrays X Object</h2>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+
+    <script>
+
+        var pessoa = ["Rodrigo", "Martins", 41];
+        document.getElementById("demo1").innerHTML = pessoa[0];
+
+        var pessoa2 = { primeiroNome: "Rodrigo", ultimoNome: "Martins", idade: "41" };
+        document.getElementById("demo2").innerHTML = pessoa2["ultimoNome"];
+
+        document.getElementById("demo3").innerHTML = pessoa.length;
+
+        var frutas = ["Morango", "Mamão", "Abacaxi", "Manga", "Laranja"];
+        var qtd = frutas.length;
+
+        texto = "<ul>";
+        for (var i = 0; i < qtd; i++) {
+
+            texto += "<li>" + frutas[i] + "</li>";
+
+        }
+
+        texto += "</ul>";
+
+        document.getElementById("demo4").innerHTML = texto ;
+
+    </script>
+</body>
+
+</html>

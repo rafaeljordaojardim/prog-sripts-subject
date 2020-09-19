@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - Exemplo 13</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Básico - Parte I</h1>
+    <h2>for...in X for...of</h2>
+
+    <script>
+        const numeros = [10,20,30,40,50,60,70,80,90,100];
+
+        //for...of itera sobre os valores 
+        for (const numero of numeros) {
+            console.log(numero);
+        }
+
+        console.log(" ");
+        console.log("Agora com for...in");
+
+        // for...in itera sobre o nome das propriedades (índice)
+        for (const numero in numeros) {
+            console.log(numero);
+        }
+
+        console.log(" ");
+        console.log("Agora com forEach");
+
+        numeros.forEach(function(numero){
+            console.log(numero);
+        });
+
+        console.log(" ");
+        console.log("Usando Arrow Functions");
+        numeros.forEach(numero => {
+            console.log(numero);
+        });
+
+    </script>
+</body>
+</html>

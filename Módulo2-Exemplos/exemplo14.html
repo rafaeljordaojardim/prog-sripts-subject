@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 2 - Exemplo 14</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Básico - Parte I</h1>
+    <h2>Arrays</h2>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+
+    <script>
+
+        var carros = ["Onix", "Agile", "Polo"];
+        document.getElementById("demo1").innerHTML = carros;
+
+        var carros2 = [
+            "Parati",
+            "Gol",
+            "Saveiro",
+        ];
+
+        document.getElementById("demo2").innerHTML = carros2;
+
+        var carros3 = new Array("Fusca","Brasília","Variant");
+        document.getElementById("demo3").innerHTML = carros3;
+
+        document.getElementById("demo4").innerHTML = "Carros na posição 1: " + carros3[1];
+
+        carros3[1] = "Del Rey";
+        document.getElementById("demo5").innerHTML = "Carros na posição 1 alterado: "
+         + carros3[1];
+
+    </script>
+</body>
+</html>
