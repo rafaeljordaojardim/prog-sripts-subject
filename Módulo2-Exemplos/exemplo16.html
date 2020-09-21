@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript - Exemplo 16</title>
+</head>
+
+<body>
+  <h1>JavaScript - Básico - Parte I</h1>
+  <h2>Pop, Push, Shift, Unshift, Sort e Reverse</h2>
+
+  <h2>pop()</h2>
+
+  <p>O método pop() remove o último elemento do Array</p>
+
+  <p id="demo1"></p>
+  <p id="demo2"></p>
+
+  <h2>shift()</h2>
+
+  <p>O método shift() remove o primeiro elemento do Array</p>
+  <p id="demo3"></p>
+
+  <h2>push()</h2>
+
+  <p>O método push() adiciona um elemento no Array</p>
+
+  <button onclick="adiciona()">PUSH</button>
+
+  <h2>Unshift()</h2>
+
+  <p>O método unshift() adiciona no início um novo elemento no Array</p>
+  <button onclick="adicionaInicio()">UNSHIFT</button>
+  <p id="demo3"></p>
+
+  <h2>Sort() e Reverse()</h2>
+
+  <p>O método sort() ordena um Array</p>
+  <p>O método reverse() classifica decrescente um Array</p>
+
+  <button onclick="ordena()">SORT</button>
+  <button onclick="decrescente()">REVERSE</button>
+
+  <script>
+    var frutas = ["Banana", "Laranja", "Maça", "Manga"];
+    document.getElementById("demo1").innerHTML = frutas;
+    frutas.pop();
+    document.getElementById("demo2").innerHTML = frutas;
+
+    frutas.shift();
+    document.getElementById("demo3").innerHTML = frutas;
+
+    function adiciona() {
+      frutas.push("Kiwi");
+      document.getElementById("demo3").innerHTML = frutas;
+    }
+
+    function adicionaInicio() {
+      frutas.unshift("Abacaxi");
+      document.getElementById("demo3").innerHTML = frutas;
+    }
+
+    function ordena() {
+      frutas.sort();
+      document.getElementById("demo3").innerHTML = frutas;
+    }
+
+    function decrescente() {
+      frutas.reverse();
+      document.getElementById("demo3").innerHTML = frutas;
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+
