@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Básico - Parte II</title>
+
+</head>
+<body>
+    <h1>Exemplo 5</h1>
+
+    <p id="intro">Localizando elemento HTML por ID</p>
+
+    <p id="demo"></p>
+
+    <script>
+        var elemento = document.getElementById("intro");
+        document.getElementById("demo").innerHTML = 
+        "O texto do parágrafo de introdução é " + elemento.innerHTML;
+    </script>
+</body>
+</html>
+
