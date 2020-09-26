@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Básico - Parte II</title>
+
+</head>
+<body>
+    <h1>Exemplo 7</h1>
+
+    <p class="intro">Localizando elementos HTML pelo nome da classe</p>
+    <p class="intro">Tem que ter o DOM</p>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+    <script>
+        var x = document.getElementsByClassName("intro");
+        document.getElementById("demo").innerHTML = 
+        'O texto do primeiro parágrafo (índice 0) é: ' + x[0].innerHTML;
+
+        x = document.getElementsByClassName("intro");
+        document.getElementById("demo1").innerHTML = 
+        'O texto do primeiro parágrafo (índice 1) é: ' + x[1].innerHTML;
+        </script>
+</body>
+</html>
+

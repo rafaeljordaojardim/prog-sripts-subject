@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Básico - Parte II</title>
+
+</head>
+
+<body>
+    <h1>Exemplo 8</h1>
+
+    <p>Localizando elementos HTML por seletores CSS - querySelector e querySelectorAll</p>
+
+    <h2 class="teste">h2 class="teste"</h2>
+    <p class="teste">Parágrafo class="teste"</p>
+
+    <button onclick="altera()">querySelector</button>
+    <button onclick="alteraTudo()">querySelectorAll</button>
+
+    <script>
+        function altera() {
+            document.querySelector(".teste").style.backgroundColor = "blue";
+        }
+
+        function alteraTudo() {
+            var x, i;
+            x = document.querySelectorAll(".teste");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.backgroundColor = "yellow";
+            }
+        }
+    </script>
+</body>
+
+</html>

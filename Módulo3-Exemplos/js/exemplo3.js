@@ -1,12 +1,5 @@
-/*
-função anônima
-var quadrado = function (numero) {
-  return numero * numero;
-}
-*/
 
-// arrow functions
-var quadrado = (numero) => {
+var quadrado = function (numero) {
   return numero * numero;
 }
 
