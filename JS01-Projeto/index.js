@@ -8,6 +8,8 @@ const connection = require("./database/database");
 
 const perguntaModel = require("./database/Pergunta");
 
+const Resposta = require("./database/Resposta");
+
 //criando uma Promisse
 connection
     .authenticate()
@@ -32,7 +34,14 @@ app.use(bodyParser.json());
 
 //rotas
 app.get("/", (req, res) => {
-    res.render("index");
+    perguntaModel.findAll({
+        raw: true, order: [
+            ['id', 'DESC'] // alterando a ordenação
+        ]}).then(perguntas => {  // select * from perguntas
+        res.render("index", {
+            perguntas: perguntas
+        });
+    });
 });
 
 app.get("/cadastro", (req, res) => {
@@ -49,6 +58,46 @@ app.post("/salvarpergunta", (req, res) => {
         descricao: descricao
     }).then(() => {
         res.redirect("/");
+    });
+});
+
+//rota para a página de pergunta
+
+app.get("/pergunta/:id", (req, res) => {
+    var id = req.params.id;
+    perguntaModel.findOne({
+        where: { id: id }
+    }).then(pergunta => {
+        if (pergunta != undefined) { //perguta encontrada
+            // carrego do banco de dados
+            Resposta.findAll({
+                where: {perguntaId: pergunta.id},
+                order: [
+                  ['id', 'DESC']  
+                ]
+            }).then(respostas =>{
+                res.render("pergunta", {
+                    pergunta: pergunta,
+                    respostas: respostas
+                });
+            })
+        } else {
+            res.redirect("/");
+        }
+    });
+});
+
+//rota para responder
+
+app.post("/responder", (req, res) =>{
+    var corpo = req.body.corpo;
+    var perguntaId = req.body.pergunta;
+
+    Resposta.create({ // insert into
+        corpo: corpo,
+        perguntaId: perguntaId
+    }).then(()=>{
+        res.redirect("/pergunta/" + perguntaId);
     });
 });
 
