@@ -7,7 +7,8 @@ router.get("/categories", (req, res) =>{
 });
 
 router.get("/admin/categories/new", (req, res) =>{
-    res.render("new");
+    res.render("admin/categories/new");
 });
 
 module.exports = router;
+

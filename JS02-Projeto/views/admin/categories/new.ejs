@@ -1,18 +1,18 @@
-<%- include ('partials/header.ejs') %>
-<%- include ('partials/navbar.ejs') %>
+<!-- arrumei aqui também -->
+<%- include ('../../partials/header.ejs') %>
+<%- include ('../..//partials/navbar.ejs') %>
 
 <body>
     <div class="container">
+        <br>
         <div class="card">
             <div class="card-header">
                 <h2>Cadastro de Categorias</h2>
-
-
             </div>
             <div class="card-body">
                 <form action="/categories/save" method="post">
-                    <input class="form-control" type="text" name="title"
-                     placeholder="Digite o título da categoria">
+                    <input class="form-control" type="text" name="title" 
+                    placeholder="Digite o título da categoria"> <br>
 
                     <button class="btn btn-primary">Cadastrar</button>
                 </form>
@@ -21,4 +21,4 @@
     </div>
 </body>
 
-<%- include ('partials/footer.ejs') %>
+<%- include ('../../partials/footer.ejs') %>
