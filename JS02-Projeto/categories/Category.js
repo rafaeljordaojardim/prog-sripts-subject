@@ -11,6 +11,12 @@ const Category = connection.define('categories',{
     }
 })
 
-//Category.sync({force:true});
+
+
+// try {    
+//     Category.sync({force:true});
+// } catch (error) {
+//     console.log(`Categories ${error}`);
+// }
 
 module.exports = Category;

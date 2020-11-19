@@ -1,8 +1,36 @@
 <%- include ('partials/header.ejs') %>
-<%- include ('partials/navbar.ejs') %>
+<%- include ('partials/homenavbar.ejs') %>
 
 <body>
-    <h1>Testando a VIEW</h1>
+   <div class="container">
+       <br>
+       <div class="jumbotron">
+           <h1 class="display-4">Programação de Scripts</h1>
+           <p class="lead">Este é o Projeto JS02</p>
+           <hr class="my-4">
+           <p>Projeto desenvolvido pelos alunos da Fatec Mogi Mirim</p>
+           <p>ver descrição completa</p>
+           <a href="#" class="btn btn-primary btn-lg" role="button">Leia mais</a>
+       </div>
+       <hr>
+       <% articles.forEach(article => { %>
+        <div class="card">
+            <div class="card-header">
+                <h2><% article.title %></h2>
+            </div>
+            <div class="card-body">
+                <a href="/<%= article.slug %>" class="btn btn-primary">Ler Artigo</a>
+            </div>
+        </div>
+        <% }) %> 
+        <br>
+
+        <div class="row">
+            <div class="col col-12">
+                <a href="/articles/page/2" style="float:right">Next >>></a>
+            </div>
+        </div>
+   </div>
 </body>
 
 

@@ -1,0 +1,63 @@
+<%- include ('../../partials/header.ejs') %>
+<%- include ('../../partials/navbar.ejs') %>
+
+<body>
+    <div class="container">
+        <hr>
+        <h2>Artigos</h2>
+        <a class="btn btn-primary" href="/admin/articles/new">Criar Novo Artigo</a>
+        <hr>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Título</th>
+                    <th>Slug</th>
+                    <th>Categoria</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% articles.forEach(article =>{ %>
+                <tr>
+                    <td><%= article.id %></td>
+                    <td><%= article.title %></td>
+                    <td><%= article.slug %></td>
+                    <td><%= article.category.title %></td>
+                    <td>
+                        <!-- <a href="/admin/categories/edit/<%= article.id %>" class="btn btn-warning">Editar</a> -->
+                        <form method="POST" action="/articles/delete" style="display:inline;"
+                            onsubmit="confirmarExclusao(event, this)">
+                            <input type="hidden" name="id" value="<%= article.id %>">
+                            <button class="btn btn-danger">Excluir</button>
+                        </form>
+
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function confirmarExclusao(event, form) {
+            event.preventDefault();
+            var decision = confirm('Deseja realmente excluir o artigo?');
+            if (decision) {
+                form.submit();
+            }
+        }
+    </script>
+</body>
+<%- include ('../../partials/footer.ejs') %>
+
+<script>
+    //criando uma função (sistema de segurança) para pedir para usuário se realmente ele quer excluir?
+    function confirmarExclusao(event, form) {
+        event.preventDefault(); //preventDefault -> impede a submissão do formulário
+        var decision = confirm("Deseja realmente excluir a categoria?");
+        if (decision) {
+            form.submit();
+        }
+    }
+</script>

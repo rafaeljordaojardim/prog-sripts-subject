@@ -16,10 +16,13 @@ const Article = connection.define('articles',{
     }
 })
 
-Category.hasMany(Article); // UMA Categoria tem muitos artigos
-Article.belongsTo(Category); // UM Artigo pertence a uma categoria
+// Category.hasMany(Article); // UMA Categoria tem muitos artigos
+// Article.belongsTo(Category); // UM Artigo pertence a uma categoria
 
-//Article.sync({force:true});
-//Category.sync({force:true});
+// try {    
+//     Article.sync({force:true})
+// } catch (error) {
+//     console.log(`Articles ${error}`);
+// }
 
 module.exports = Article;
