@@ -46,7 +46,9 @@ app.get("/",(req,res)=>{
         ],
         limit: 4
     }).then(articles => {
+        console.log(`Articles ${JSON.stringify(articles)}`);
         Category.findAll().then(categories => {
+            console.log(`Categories ${JSON.stringify(categories)}`);
             res.render("index", { articles, categories });
         });
         console.log('INTO THE THEN');
@@ -58,8 +60,10 @@ app.get("/:slug",(req,res)=>{
   Article.findOne({
       where: { slug }
   }).then(article => {
+      console.log(`Article ${article}`);
       if (article) {
           Category.findAll().then(categories => {
+            console.log(`Categories ${categories}`);
               res.render("article", { article, categories})
           })
       } else {
@@ -78,7 +82,7 @@ app.get("/category/:slug",(req,res)=>{
     }).then(category => {
         if (category) {
             Category.findAll().then(categories => {
-                res.render("article", { articles: category.articles, categories})
+                res.render("index", { articles: category.articles, categories})
             })
         } else {
             res.redirect('/');

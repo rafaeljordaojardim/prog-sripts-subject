@@ -25,8 +25,10 @@ router.get("/admin/articles/new", adminAuth, (req, res) =>{
 
 router.get("/admin/articles/edit/:id", adminAuth, (req, res) =>{
     const { id } = req.params;
+    console.log('ID', id);
     Articles.findByPk(id).then(article => {
         if (article) {
+            console.log('Article', JSON.stringify(article));
             Category.findAll().then(categories => {
                 res.render("admin/articles/edit", { categories, article })
             });
